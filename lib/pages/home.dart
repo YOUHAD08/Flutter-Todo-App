@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/pages/add.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -21,9 +22,13 @@ class _MyHomePageState extends State<MyHomePage> {
           fontWeight: FontWeight.bold,
         ),
       ),
-      body: Center(child: Text('Hello World!')),
+      body: Center(child: Column()),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(
+            context,
+          ).push(MaterialPageRoute(builder: (context) => const AddTodoPage()));
+        },
         child: Icon(Icons.add),
       ),
     );
