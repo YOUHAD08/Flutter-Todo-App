@@ -9,16 +9,7 @@ class AddTodoPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     TextEditingController todoController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Todo App'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 87, 131, 153),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      appBar: AppBar(title: Text('Todo App')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

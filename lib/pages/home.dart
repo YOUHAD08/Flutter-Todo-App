@@ -12,26 +12,23 @@ class MyHomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     List todos = ref.watch(todoProvider);
     List activeTodos = todos.where((todo) => !todo.isCompleted).toList();
-    List completedTodos = todos.where((todo) => todo.isCompleted).toList();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Todo App'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 87, 131, 153),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      appBar: AppBar(title: Text('Todo App')),
       body: Padding(
         padding: const EdgeInsets.all(4.0),
         child: ListView.builder(
           itemCount: activeTodos.length + 1,
           itemBuilder: (context, index) {
             if (index == activeTodos.length) {
-              if (completedTodos.isEmpty) {
-                return Container();
+              if (activeTodos.isEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(top: 300),
+                  child: Text(
+                    'Add a todo using the button below',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 10),
+                  ),
+                );
               } else {
                 return Center(
                   child: TextButton(
@@ -44,10 +41,7 @@ class MyHomePage extends ConsumerWidget {
                     },
                     child: Text(
                       'Completed Todos',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextStyle(fontSize: 13, color: Colors.blue),
                     ),
                   ),
                 );
@@ -96,16 +90,19 @@ class MyHomePage extends ConsumerWidget {
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(
                         255,
-                        191,
-                        192,
-                        191,
+                        227,
+                        228,
+                        227,
                       ), // background moves too
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: ListTile(
                       title: Text(
                         todos[index].content,
-                        style: TextStyle(fontSize: 18, color: Colors.black),
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: const Color.fromARGB(255, 75, 71, 71),
+                        ),
                         textAlign: TextAlign.center,
                       ),
                       shape: RoundedRectangleBorder(

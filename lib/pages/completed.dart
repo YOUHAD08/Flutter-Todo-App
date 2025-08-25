@@ -11,16 +11,7 @@ class CompletedTodoPage extends ConsumerWidget {
     List todos = ref.watch(todoProvider);
     List completedTodos = todos.where((todo) => todo.isCompleted).toList();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Completed Todo'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 87, 131, 153),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      appBar: AppBar(title: Text('Todo App')),
       body: Padding(
         padding: const EdgeInsets.all(4.0),
         child: ListView.builder(
