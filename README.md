@@ -58,7 +58,7 @@ flutter run
 
 ## 📸 Project Overview
 
-![Project Structure](readme_image\TODO_App.gif)
+![Project Structure](readme_image/TODO_App.gif)
 
 ## 📚 What I Learned
 
