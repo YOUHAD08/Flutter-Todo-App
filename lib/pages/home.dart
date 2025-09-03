@@ -50,10 +50,12 @@ class MyHomePage extends ConsumerWidget {
               return Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Slidable(
+                  key: ValueKey(activeTodos[index].id.toString()),
                   startActionPane: ActionPane(
                     motion: const ScrollMotion(),
                     children: [
                       SlidableAction(
+                        key: ValueKey("${activeTodos[index].id}delete"),
                         onPressed: (context) {
                           ref
                               .read(todoProvider.notifier)
